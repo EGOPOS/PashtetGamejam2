@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://jga8m1l174gi"]
+
+[ext_resource type="Script" path="res://homelander/homeless.gd" id="1_nowmn"]
+[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="1_roqg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nhw5"]
+size = Vector2(16, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twgh2"]
+size = Vector2(28, 29)
+
+[node name="homeless" type="CharacterBody2D"]
+script = ExtResource("1_nowmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_4nhw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.125, 0.265625)
+texture = ExtResource("1_roqg3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -11)
+zoom = Vector2(6, 6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_twgh2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
