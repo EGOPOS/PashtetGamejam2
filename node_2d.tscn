@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://barb3fj7dbavk"]
+
+[ext_resource type="PackedScene" uid="uid://gfp3j7vuq5ir" path="res://apartments/Home.tscn" id="1_8tveg"]
+[ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_57als"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Home" parent="." instance=ExtResource("1_8tveg")]
+scale = Vector2(0.1, 0.1)
+
+[node name="homeless" parent="." instance=ExtResource("2_57als")]

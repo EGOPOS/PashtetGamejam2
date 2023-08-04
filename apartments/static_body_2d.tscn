@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://doc4xl1jgccot"]
+
+[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="1_4qkhk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_udgip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fojen"]
+size = Vector2(128, 128)
+
+[node name="Floor" type="StaticBody2D"]
+position = Vector2(2229, 589)
+physics_material_override = SubResource("PhysicsMaterial_udgip")
+
+[node name="FloorSprite" type="Sprite2D" parent="."]
+scale = Vector2(40, 1)
+texture = ExtResource("1_4qkhk")
+
+[node name="ShapeForFloor" type="CollisionShape2D" parent="."]
+scale = Vector2(40, 1)
+shape = SubResource("RectangleShape2D_fojen")
