@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctru0cnuwhr0k"]
+
+[ext_resource type="Script" path="res://GameManagers/Scripts/audio_manager.gd" id="1_wwu1v"]
+[ext_resource type="AudioStream" uid="uid://cvo5aijrgsgic" path="res://Audio/MainSound.wav" id="2_x4axi"]
+[ext_resource type="AudioStream" uid="uid://cymehs1fehcnr" path="res://Audio/zapsplat_multimedia_button_click_fast_short_004_79288.mp3" id="3_qvhyf"]
+[ext_resource type="AudioStream" uid="uid://dwxxs7lnwtm0u" path="res://Audio/SelectSoundEffect.mp3" id="3_rdosv"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_wwu1v")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="Music"]
+bus = &"Music"
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_x4axi")
+bus = &"Music"
+
+[node name="TensionMusic" type="AudioStreamPlayer" parent="Music"]
+bus = &"Music"
+
+[node name="MiniGameMusic1" type="AudioStreamPlayer" parent="Music"]
+bus = &"Music"
+
+[node name="GlobalSFX" type="Node" parent="."]
+
+[node name="StepSound" type="AudioStreamPlayer2D" parent="GlobalSFX"]
+visible = false
+bus = &"SFX"
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="GlobalSFX"]
+visible = false
+stream = ExtResource("3_rdosv")
+bus = &"SFX"
+
+[node name="CharDialogSound" type="AudioStreamPlayer" parent="GlobalSFX"]
+stream = ExtResource("3_qvhyf")
+bus = &"SFX"

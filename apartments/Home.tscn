@@ -1,15 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://gfp3j7vuq5ir"]
 
-[ext_resource type="Texture2D" uid="uid://gxn505cjjctb" path="res://graphics/home-theater-with-big-music-speakers-game-room-interior-night-apartment-big-tv-screen-illustration-free-vector.jpg" id="1_613rj"]
-[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/static_body_2d.tscn" id="2_ffmpu"]
+[ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_3xv28"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://Apartments/floor.tscn" id="2_0v1ol"]
 
 [node name="Home" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(2272, -11.4998)
-scale = Vector2(2.37188, 0.92023)
-texture = ExtResource("1_613rj")
+[node name="FloorColor" type="ColorRect" parent="."]
+offset_left = -256.0
+offset_top = -42.0
+offset_right = 100.0
+offset_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
 
-[node name="Floor" parent="." instance=ExtResource("2_ffmpu")]
-position = Vector2(2146, 612)
-scale = Vector2(2, 2)
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3xv28")
+
+[node name="Floor" parent="." instance=ExtResource("2_0v1ol")]
+position = Vector2(0, 37.5)
+scale = Vector2(4, 0.1)

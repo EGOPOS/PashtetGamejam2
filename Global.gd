@@ -26,7 +26,7 @@ func transition_to(type: TRANSITION_TYPES, action: int):
 	match type:
 		TRANSITION_TYPES.LOCATION:
 			get_tree().change_scene_to_packed(locations_paths[action])
-		
+
 		TRANSITION_TYPES.CUTSCENE:
 			pass
 		

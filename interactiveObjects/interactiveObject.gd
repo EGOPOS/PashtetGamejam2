@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name InteraciveObject
+class_name InteractiveObject
 
 var animation: bool = false
 @onready var sprite: Sprite2D = get_node("Sprite2D")

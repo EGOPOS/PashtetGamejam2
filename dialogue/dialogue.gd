@@ -33,6 +33,7 @@ func text_animation():
 		if label.visible_characters == label.text.length():
 			break
 		label.visible_characters = c
+		Audio.play_char_audio(c)
 
 func set_current_page(value):
 	current_page = value
