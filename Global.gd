@@ -6,9 +6,10 @@ func transition_to(type: TRANSITION_TYPES, scene: PackedScene):
 	match type:
 		TRANSITION_TYPES.LOCATION:
 			pass
-		
+
 		TRANSITION_TYPES.CUTSCENE:
 			pass
 		
 		TRANSITION_TYPES.MINI_GAME:
+#			Minigame.start_minigame(scene.instantiate())
 			pass

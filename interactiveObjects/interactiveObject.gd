@@ -1,11 +1,11 @@
 extends Area2D
 
-class_name InteraciveObject
+class_name InteractiveObject
 
 var animation: bool = false
 @onready var sprite: Sprite2D = get_node("Sprite2D")
 
-@export var action: PackedScene
+@export var minigame_scene: PackedScene
 @export var action_type: Global.TRANSITION_TYPES
 
 func set_animation(value: bool):
@@ -16,4 +16,4 @@ func set_animation(value: bool):
 		sprite.material = null
 
 func interact():
-	Global.transition_to(action_type, action)
+	Global.transition_to(action_type, minigame_scene)
