@@ -41,4 +41,4 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area == interactive_object:
 		interactive_object.set_animation(false)
-		interactive_object = interactive_object.new()
+		interactive_object = InteractiveObject.new()

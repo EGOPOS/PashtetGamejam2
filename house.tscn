@@ -1,39 +1,106 @@
-[gd_scene load_steps=10 format=3 uid="uid://1mdxm5tvssqc"]
+[gd_scene load_steps=11 format=3 uid="uid://1mdxm5tvssqc"]
 
 [ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_aveac"]
 [ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="1_vj1x6"]
+[ext_resource type="Texture2D" uid="uid://67k3rnnpnxaw" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_vx6u4"]
 [ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="3_i7ekf"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="6_ce5al"]
 [ext_resource type="PackedScene" uid="uid://bvjboxqve5mhw" path="res://interactiveObjects/doorToLocation.tscn" id="6_oqv5t"]
 [ext_resource type="PackedScene" uid="uid://o1rxb22yord2" path="res://interactiveObjects/plant.tscn" id="7_nq0ks"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yck4c"]
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3u5bj"]
 closed = false
 polygon = PackedVector2Array(-254, -73, -160, -73, -160, -44, -158, -44, -158, -73, 32, -73, 32, -44, 34, -44, 34, -73, 100, -73, 100, -10, -254, -10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yck4c"]
+
 [node name="House" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -895.0
-offset_top = -593.0
-offset_right = 789.0
-offset_bottom = 389.0
+visible = false
+offset_left = -862.0
+offset_top = -577.0
+offset_right = 822.0
+offset_bottom = 405.0
 color = Color(0.0546875, 0.046875, 0.046875, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.1, 1.1)
+
+[node name="1" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+position = Vector2(44, -46)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_y3yya")
+hframes = 2
+frame = 1
+
+[node name="2" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+position = Vector2(-162, -48)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_y3yya")
+hframes = 2
+
+[node name="paralax" type="ParallaxBackground" parent="."]
+visible = false
+offset = Vector2(0, -65)
+transform = Transform2D(1, 0, 0, 1, 0, -65)
+follow_viewport_enabled = true
 
 [node name="HomeSlit" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -43)
 texture = ExtResource("1_aveac")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
 [node name="interactiveObject" parent="." instance=ExtResource("3_i7ekf")]
 position = Vector2(68, -33)
 
+[node name="InteractiveObjects" type="Node2D" parent="."]
+
+[node name="plant" parent="InteractiveObjects" instance=ExtResource("7_nq0ks")]
+position = Vector2(84, -63)
+
+[node name="doorToLocation" parent="InteractiveObjects" instance=ExtResource("6_oqv5t")]
+position = Vector2(18, -33)
+action = 2
+action_type = 1
+
+[node name="homeless" parent="." instance=ExtResource("2_vx6u4")]
+position = Vector2(-8, -28)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_3u5bj")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-163, -50)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("6_ce5al")
+texture_scale = 0.5
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(153, -66)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("6_ce5al")
+texture_scale = 0.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(45, -48)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("6_ce5al")
+texture_scale = 0.5
+
 [node name="staticBodies" type="Node2D" parent="."]
 visible = false
-position = Vector2(0, -1)
+position = Vector2(83, -1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="staticBodies"]
 
@@ -106,6 +173,134 @@ scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_vj1x6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D21"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(111, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D22"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D22"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D22"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(111, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D23"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D23"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D23"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(111, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D24"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D24"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D24"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(111, -79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D25"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D25"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D25"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(-274, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D26"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D26"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D26"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D27" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(-274, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D27"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D27"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D27"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D28" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(-274, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D28"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D28"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D28"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="StaticBody2D29" type="StaticBody2D" parent="staticBodies"]
+position = Vector2(-274, -79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="staticBodies/StaticBody2D29"]
+shape = SubResource("RectangleShape2D_yck4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="staticBodies/StaticBody2D29"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_vj1x6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="staticBodies/StaticBody2D29"]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_vj1x6")
@@ -252,34 +447,3 @@ shape = SubResource("RectangleShape2D_yck4c")
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_vj1x6")
-
-[node name="InteractiveObjects" type="Node2D" parent="."]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
-occluder = SubResource("OccluderPolygon2D_3u5bj")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-183, -58)
-energy = 0.5
-shadow_enabled = true
-texture = ExtResource("6_ce5al")
-texture_scale = 0.5
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(-44, -58)
-energy = 0.5
-shadow_enabled = true
-texture = ExtResource("6_ce5al")
-texture_scale = 0.5
-
-[node name="homeless" parent="." instance=ExtResource("2_vx6u4")]
-position = Vector2(-8, -28)
-
-[node name="doorToLocation" parent="." instance=ExtResource("6_oqv5t")]
-position = Vector2(18, -33)
-action = 2
-action_type = 1
-
-[node name="plant" parent="." instance=ExtResource("7_nq0ks")]
-position = Vector2(-4, -62)

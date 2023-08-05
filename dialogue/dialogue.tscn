@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_0y2ky"]
 [ext_resource type="Texture2D" uid="uid://bxpx8nrbjuatg" path="res://dialogue/1670915464_grizly-club-p-bomzh-png-1.png" id="1_q5lkl"]
-[ext_resource type="Texture2D" uid="uid://0fh3ej42vjbv" path="res://dialogue/maxresdefault (1).jpg" id="2_xeu8j"]
+[ext_resource type="Texture2D" uid="uid://x5gmsbq7penf" path="res://graphics/DialogWindow.png" id="2_n7s5c"]
 
 [sub_resource type="Animation" id="Animation_jewb6"]
 length = 0.001
@@ -69,26 +69,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -240.0
-offset_right = 576.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 modulate = Color(1, 1, 1, 0.603922)
-self_modulate = Color(0.054902, 0.054902, 0.054902, 1)
+self_modulate = Color(0.301961, 0.301961, 0.301961, 1)
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xeu8j")
+texture = ExtResource("2_n7s5c")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="label" type="RichTextLabel" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,6 +100,7 @@ offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 26
 scroll_following = true
 autowrap_mode = 2
 
@@ -106,13 +109,15 @@ position = Vector2(164, 54)
 texture = ExtResource("1_q5lkl")
 
 [node name="Button" type="Button" parent="Control"]
+texture_filter = 1
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 0
 offset_left = 1009.0
 offset_top = 199.0
 offset_right = 1150.0
 offset_bottom = 239.0
-text = "Продолжить"
+theme_override_font_sizes/font_size = 26
+text = "Continue"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -8,6 +8,8 @@ class_name AudioManager
 @onready var select_sound: AudioStreamPlayer2D = $GlobalSFX/SelectSound
 @onready var char_sound: AudioStreamPlayer = $GlobalSFX/CharDialogSound
 
+var noise: FastNoiseLite = FastNoiseLite.new()
+
 enum AUDIO{
 	MAIN_MENU_MUSIC,
 	MAIN_SCENE_MUSIC,
@@ -29,7 +31,6 @@ func change_current_music(_new_music: AUDIO) -> void:
 	current_music.play()
 
 func play_char_audio(characters: int):
-	var noise: FastNoiseLite = FastNoiseLite.new()
 	var new_pitch: float = abs(noise.get_noise_1d(characters)) * 2
 	new_pitch = clamp(new_pitch, 0.9, 1.2)
 	char_sound.set_pitch_scale(new_pitch)

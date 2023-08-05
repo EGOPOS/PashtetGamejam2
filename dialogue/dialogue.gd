@@ -13,6 +13,8 @@ signal dialogue_ended
 signal page_changed
 
 func _ready():
+	Audio.noise.seed = randi()
+	
 	animation_player.play("show")
 	await animation_player.animation_finished
 	

@@ -1,4 +1,4 @@
-extends InteraciveObject
+extends InteractiveObject
 
 @export var action: Global.LOCATIONS
 @export var action_type: Global.TRANSITION_TYPES
