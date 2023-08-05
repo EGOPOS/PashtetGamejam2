@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://gfp3j7vuq5ir"]
+
+[ext_resource type="Texture2D" uid="uid://gxn505cjjctb" path="res://graphics/home-theater-with-big-music-speakers-game-room-interior-night-apartment-big-tv-screen-illustration-free-vector.jpg" id="1_613rj"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/static_body_2d.tscn" id="2_ffmpu"]
+
+[node name="Home" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2272, -11.4998)
+scale = Vector2(2.37188, 0.92023)
+texture = ExtResource("1_613rj")
+
+[node name="Floor" parent="." instance=ExtResource("2_ffmpu")]
+position = Vector2(2146, 612)
+scale = Vector2(2, 2)
