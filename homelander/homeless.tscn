@@ -22,7 +22,7 @@ scale = Vector2(0.125, 0.265625)
 texture = ExtResource("1_roqg3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -12)
 zoom = Vector2(6, 6)
 
 [node name="Area2D" type="Area2D" parent="."]

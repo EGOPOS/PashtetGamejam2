@@ -1,13 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqyuauynu4j5o"]
+[gd_scene load_steps=8 format=3 uid="uid://bqyuauynu4j5o"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_0y2ky"]
 [ext_resource type="Texture2D" uid="uid://bxpx8nrbjuatg" path="res://dialogue/1670915464_grizly-club-p-bomzh-png-1.png" id="1_q5lkl"]
 [ext_resource type="Texture2D" uid="uid://0fh3ej42vjbv" path="res://dialogue/maxresdefault (1).jpg" id="2_xeu8j"]
 
+[sub_resource type="Animation" id="Animation_jewb6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 408)]
+}
+
+[sub_resource type="Animation" id="Animation_n4apg"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 408), Vector2(0, 1008)]
+}
+
+[sub_resource type="Animation" id="Animation_vyx48"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1008), Vector2(0, 408)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxqg0"]
+_data = {
+"RESET": SubResource("Animation_jewb6"),
+"hide": SubResource("Animation_n4apg"),
+"show": SubResource("Animation_vyx48")
+}
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_0y2ky")
-text_speed = 0.2
-dialogue_pages = Array[String](["t,fk nt,z d hjn"])
+dialogue_pages = Array[String](["Фильм: \"Сatisfactory Fever\"В жанре: комедияГлавные герои:1. EGOPOS - опытный геймер, известный своим непоколебимым эго и любовью к сложным играм. Он всегда стремится быть лучшим и решает принять вызов в новой игре Satisfactory.2. ZΞPHΨR - энтузиаст игровой индустрии и хитрец. Этот молодой человек обожает исследовать и использовать баги в играх. В Satisfactory он видит потенциал для творчества и бесконечных приключений.3. Sol - энергичная и веселая девушка, не имеющая опыта в играх, но с огромным желанием поиграть в Satisfactory с друзьями. Она добрая и всегда готова помочь, хотя и попадает в самые смешные ситуации.", "Сюжет:EGOPOS рассказывает ZΞPHΨR и Sol о новом фантастическом мире, созданном в Satisfactory. Они собираются вместе, чтобы затестить игровое приключение и испытать все его возможности. Однако, уже с самого начала, они сталкиваются с багами и неожиданными ситуациями.Ключевая фраза фильма, \"Собрались как-то поиграть в Satisfactory\", становится поводом для появления комических эпизодов, в которых герои наталкиваются на магически превращающиеся фабрики, непредсказуемых монстров и другие смешные приключения. Они понимают, что Satisfactory - это не просто игра, а мир, где все возможно.", "EGOPOS, ошеломленный ситуацией, пытается доказать свою превосходность, но каждый раз упускает победу из-за его собственной высокомерности. ZΞPHΨR продолжает эксплуатировать баги, превращая игру в настоящий карнавал. Sol, смех и радость компании, оказывается самой удачливой и способной помочь команде выбраться из смешных ситуаций.В конце фильма, герои осознают, что Satisfactory - это важнее, чем победа, это общее приключение и веселье. Они наконец находят способ преодолевать баги и использовать их в свою пользу. Их дружба становится несокрушимой, а их приключения - воспоминанием, которое они будут делиться и смеяться всегда.", "Комедия \"Сatisfactory Fever\" предлагает зрителям непрерывный поток смешных ситуаций, захватывающие приключения и отличное настроение. В ней смешивается страсть к играм, живой юмор и незабываемые моменты, которые оставляют героям и зрителям ощущение, что они тоже были частью этого удивительного приключения."])
 
 [node name="Control" type="Control" parent="."]
 clip_children = 1
@@ -18,25 +69,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -240.0
-offset_right = 576.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 368.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/line_spacing = 10
-autowrap_mode = 2
-
 [node name="TextureRect" type="TextureRect" parent="Control"]
-modulate = Color(1, 1, 1, 0.164706)
+modulate = Color(1, 1, 1, 0.603922)
+self_modulate = Color(0.054902, 0.054902, 0.054902, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,6 +88,35 @@ texture = ExtResource("2_xeu8j")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="label" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 380.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 6
+scroll_following = true
+autowrap_mode = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(164, 54)
 texture = ExtResource("1_q5lkl")
+
+[node name="Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 199.0
+offset_right = 1150.0
+offset_bottom = 239.0
+text = "Продолжить"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fxqg0")
+}
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_texture_button_pressed"]

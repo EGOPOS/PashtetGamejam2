@@ -5,4 +5,4 @@
 [resource]
 shader = ExtResource("1_j84kl")
 shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 3.0
+shader_parameter/line_thickness = 1.0
