@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://1mdxm5tvssqc"]
+[gd_scene load_steps=14 format=3 uid="uid://1mdxm5tvssqc"]
 
 [ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_aveac"]
-[ext_resource type="Script" path="res://house.gd" id="1_xtne1"]
-[ext_resource type="Texture2D" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
+[ext_resource type="Texture2D" uid="uid://67k3rnnpnxaw" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
+
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_vx6u4"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/homePhone.tscn" id="3_o2o7y"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="6_ce5al"]
 [ext_resource type="PackedScene" uid="uid://bvjboxqve5mhw" path="res://interactiveObjects/doorToLocation.tscn" id="6_oqv5t"]
 [ext_resource type="PackedScene" uid="uid://o1rxb22yord2" path="res://interactiveObjects/plant.tscn" id="7_nq0ks"]
-[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="8_36ad4"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://Apartments/floor.tscn" id="8_36ad4"]
+[ext_resource type="PackedScene" uid="uid://hjjd24g01wii" path="res://interactiveObjects/bad.tscn" id="9_284xf"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/boxes.tscn" id="9_ji8m2"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/wardrobe.tscn" id="10_ai1lj"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/kitchen.tscn" id="11_c51kv"]
@@ -181,6 +182,9 @@ position = Vector2(-97.5, -37.5)
 
 [node name="kitchen" parent="InteractiveObjects" instance=ExtResource("11_c51kv")]
 position = Vector2(-38.5, -27.5)
+
+[node name="bad" parent="InteractiveObjects" instance=ExtResource("9_284xf")]
+position = Vector2(-157, -22)
 
 [node name="homeless" parent="." instance=ExtResource("2_vx6u4")]
 position = Vector2(109, -34)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bepd4xksq3eu5"]
 
 [ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_0xrr2"]
-[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="2_y3kv3"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://Apartments/floor.tscn" id="2_y3kv3"]
 
 [node name="Home" type="Node2D"]
 

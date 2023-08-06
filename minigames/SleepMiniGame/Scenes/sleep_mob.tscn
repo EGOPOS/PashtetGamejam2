@@ -1,17 +1,42 @@
-[gd_scene load_steps=17 format=3 uid="uid://cn3ocb5am37kc"]
+[gd_scene load_steps=21 format=3 uid="uid://cn3ocb5am37kc"]
 
 [ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/SleepMob.gd" id="1_uj8qm"]
-[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_70knf"]
+[ext_resource type="Texture2D" uid="uid://cl41cxsm624qw" path="res://graphics/SleepMiniGame/Enemy.png" id="2_5yl4t"]
 [ext_resource type="Texture2D" uid="uid://v3dhew5424yl" path="res://graphics/SleepMiniGame/Explosion.png" id="3_grhqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ttfw"]
 size = Vector2(102, 116)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pgnf"]
+atlas = ExtResource("2_5yl4t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0bmx"]
+atlas = ExtResource("2_5yl4t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiwko"]
+atlas = ExtResource("2_5yl4t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xabay"]
+atlas = ExtResource("2_5yl4t")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kcrd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_70knf")
+"texture": SubResource("AtlasTexture_5pgnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0bmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiwko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xabay")
 }],
 "loop": true,
 "name": &"default",
@@ -97,6 +122,7 @@ animations = [{
 }]
 
 [node name="SleepMob" type="CharacterBody2D"]
+process_mode = 3
 input_pickable = true
 script = ExtResource("1_uj8qm")
 
@@ -104,7 +130,11 @@ script = ExtResource("1_uj8qm")
 shape = SubResource("RectangleShape2D_4ttfw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(3.4375, 3.9375)
 sprite_frames = SubResource("SpriteFrames_7kcrd")
+autoplay = "default"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

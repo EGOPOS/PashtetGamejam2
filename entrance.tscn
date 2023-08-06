@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://entrance.gd" id="1_007rb"]
 [ext_resource type="Texture2D" path="res://graphics/Enterance.png" id="1_sgtr3"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="2_q2t80"]
-[ext_resource type="Texture2D" path="res://graphics/furnitureShIT.png" id="3_50eop"]
+[ext_resource type="Texture2D" uid="uid://cqemqcqwqdm3p" path="res://graphics/furnitureShIT.png" id="3_50eop"]
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="4_bgvhr"]
 [ext_resource type="PackedScene" uid="uid://bvjboxqve5mhw" path="res://interactiveObjects/doorToLocation.tscn" id="5_6coid"]
-[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="5_g0t1a"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://Apartments/floor.tscn" id="5_g0t1a"]
 
 [sub_resource type="Animation" id="Animation_evm58"]
 length = 0.001

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://hjjd24g01wii"]
+
+[ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_nd33j"]
+[ext_resource type="Texture2D" uid="uid://2qwmt4254ock" path="res://graphics/bad.png" id="2_a6f71"]
+[ext_resource type="Script" path="res://interactiveObjects/bad.gd" id="2_aqgsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o4lm"]
+size = Vector2(44, 31)
+
+[node name="interactiveObject" instance=ExtResource("1_nd33j")]
+script = ExtResource("2_aqgsr")
+action = 5
+action_type = 3
+object_name = "Кровать"
+
+[node name="Label" parent="." index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_a6f71")
+hframes = 1
+frame = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_8o4lm")

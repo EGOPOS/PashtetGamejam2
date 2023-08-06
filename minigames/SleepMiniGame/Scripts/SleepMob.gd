@@ -61,5 +61,5 @@ func play_death_animation_and_kill() -> void:
 func play_take_damage_anim() -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(1, 0.7), 0.1)
-	tween.tween_property($AnimatedSprite2D, "scale", Vector2(1, 1), 0.1)
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(3.5, 4), 0.1)
 	
