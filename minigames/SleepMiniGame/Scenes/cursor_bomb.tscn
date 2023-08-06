@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cge26o77wc0ss"]
+
+[ext_resource type="PackedScene" uid="uid://il3gwbdgwd7r" path="res://minigames/SleepMiniGame/Scenes/clickable_object.tscn" id="1_roaxh"]
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/cursor_bomb.gd" id="2_frvg3"]
+[ext_resource type="Texture2D" uid="uid://dj4rqm137siku" path="res://graphics/SleepMiniGame/cursor.png" id="3_nbn7d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bym3e"]
+atlas = ExtResource("3_nbn7d")
+region = Rect2(0, 0, 325, 326)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x70k4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bym3e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CursorBomb" instance=ExtResource("1_roaxh")]
+script = ExtResource("2_frvg3")
+effect_duration = 10.0
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(0.578462, 0.466258)
+sprite_frames = SubResource("SpriteFrames_x70k4")

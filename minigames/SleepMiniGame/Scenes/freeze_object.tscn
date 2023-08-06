@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cey2d2eb0um08"]
+
+[ext_resource type="PackedScene" uid="uid://il3gwbdgwd7r" path="res://minigames/SleepMiniGame/Scenes/clickable_object.tscn" id="1_msvfy"]
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/freeze_object.gd" id="2_51a8f"]
+[ext_resource type="Texture2D" uid="uid://bs5r6y8wb01rx" path="res://graphics/SleepMiniGame/Snow.png" id="3_xut3o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knvjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xut3o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FreezeObject" instance=ExtResource("1_msvfy")]
+script = ExtResource("2_51a8f")
+effect_duration = 4.0
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(-2, 7)
+scale = Vector2(0.317391, 0.29)
+sprite_frames = SubResource("SpriteFrames_knvjv")

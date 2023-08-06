@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgquvsp071dlk"]
+[gd_scene load_steps=16 format=3 uid="uid://bgquvsp071dlk"]
 
 [ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_rsgde"]
 [ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/SleepMiniGame.gd" id="2_47m6i"]
 [ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="3_0fx27"]
 [ext_resource type="PackedScene" uid="uid://cn3ocb5am37kc" path="res://minigames/SleepMiniGame/Scenes/sleep_mob.tscn" id="3_usvvl"]
+[ext_resource type="PackedScene" uid="uid://c1ojwd46o4sgx" path="res://minigames/SleepMiniGame/Scenes/slow_mob_object.tscn" id="5_3q8cf"]
+[ext_resource type="PackedScene" uid="uid://cey2d2eb0um08" path="res://minigames/SleepMiniGame/Scenes/freeze_object.tscn" id="5_6wiqu"]
+[ext_resource type="PackedScene" uid="uid://dfljyu3ha0ovk" path="res://minigames/SleepMiniGame/Scenes/super_bomb.tscn" id="7_jkftu"]
+[ext_resource type="PackedScene" uid="uid://cge26o77wc0ss" path="res://minigames/SleepMiniGame/Scenes/cursor_bomb.tscn" id="7_o723i"]
+[ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="8_pg66s"]
+[ext_resource type="FontFile" uid="uid://v642onk0wmuw" path="res://fonts/vcrosdmonorusbyd.ttf" id="9_btjs6"]
+[ext_resource type="PackedScene" uid="uid://bk8plnok35xqd" path="res://minigames/SleepMiniGame/Scenes/heal_pack.tscn" id="10_sw3eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gu3r"]
 size = Vector2(66, 68)
@@ -15,18 +22,32 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(248, 8, 244, 648, 890, 
 
 [sub_resource type="Curve2D" id="Curve2D_bi7l8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 287, 178, 0, 0, 0, 0, 290, 78, 0, 0, 0, 0, 835, 69, 0, 0, 0, 0, 832, 170)
+"points": PackedVector2Array(0, 0, 0, 0, 262, 191, 0, 0, 0, 0, 347, 40, 0, 0, 0, 0, 760, 28, 0, 0, 0, 0, 862, 186)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_ssl1j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 161, -46, 0, 0, 0, 0, 913, -70)
+}
+point_count = 2
 
 [node name="SleepMiniGame" instance=ExtResource("1_rsgde")]
 script = ExtResource("2_47m6i")
 cursor_damage = 50
 mob_speed = 200.0
 mob_scene = ExtResource("3_usvvl")
-object_scene = null
+objects_scenes = Array[PackedScene]([ExtResource("5_6wiqu"), ExtResource("5_3q8cf"), ExtResource("7_jkftu"), ExtResource("7_o723i"), ExtResource("10_sw3eh")])
+score = 0
+health_points = 100.0
+mob_prop_scale = 1.0
 
-[node name="Homeless" type="Area2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(556, 295)
+scale = Vector2(7.64634, 6.48781)
+texture = ExtResource("8_pg66s")
+
+[node name="Homeless" type="Area2D" parent="." index="1"]
 position = Vector2(550, 550)
 
 [node name="Sprite2D" type="Sprite2D" parent="Homeless" index="0"]
@@ -35,17 +56,59 @@ texture = ExtResource("3_0fx27")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Homeless" index="1"]
 shape = SubResource("RectangleShape2D_4gu3r")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="1"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="2"]
 navigation_polygon = SubResource("NavigationPolygon_gcavx")
 
-[node name="MobTimer" type="Timer" parent="." index="2"]
+[node name="MobTimer" type="Timer" parent="." index="3"]
 autostart = true
 
-[node name="Path2D" type="Path2D" parent="." index="3"]
+[node name="ObjectTimer" type="Timer" parent="." index="4"]
+wait_time = 6.0
+autostart = true
+
+[node name="Path2D" type="Path2D" parent="." index="5"]
 curve = SubResource("Curve2D_bi7l8")
 
 [node name="MobPath" type="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(287, 178)
-rotation = -1.54081
+position = Vector2(262, 191)
+rotation = -1.05809
 
+[node name="Path2D2" type="Path2D" parent="." index="6"]
+curve = SubResource("Curve2D_ssl1j")
+
+[node name="ObjectsPath" type="PathFollow2D" parent="Path2D2" index="0"]
+position = Vector2(161, -46)
+rotation = -0.0319041
+
+[node name="ScoreLabel" type="Label" parent="." index="7"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -91.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_btjs6")
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="HPBar" type="ProgressBar" parent="." index="8"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 241.0
+grow_vertical = 0
+step = 1.0
+value = 100.0
+
+[node name="SlowMobObject" parent="." index="9" instance=ExtResource("5_3q8cf")]
+position = Vector2(364, 206)
+
+[connection signal="body_entered" from="Homeless" to="." method="take_damage"]
 [connection signal="timeout" from="MobTimer" to="." method="spawn_mob"]
+[connection signal="timeout" from="ObjectTimer" to="." method="spawn_objects"]

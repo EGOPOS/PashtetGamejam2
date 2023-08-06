@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctru0cnuwhr0k"]
+[gd_scene load_steps=7 format=3 uid="uid://ctru0cnuwhr0k"]
 
 [ext_resource type="Script" path="res://GameManagers/Scripts/audio_manager.gd" id="1_wwu1v"]
 [ext_resource type="AudioStream" uid="uid://cvo5aijrgsgic" path="res://Audio/MainSound.wav" id="2_x4axi"]
+[ext_resource type="AudioStream" uid="uid://dhlw1tn4parh4" path="res://Audio/Tension.mp3" id="3_pckkr"]
 [ext_resource type="AudioStream" uid="uid://dwxxs7lnwtm0u" path="res://Audio/SelectSoundEffect.mp3" id="3_qvhyf"]
 [ext_resource type="AudioStream" uid="uid://yds2jme1w3tm" path="res://Audio/ExplosionSound.wav" id="4_bydh8"]
+[ext_resource type="AudioStream" uid="uid://c7ukcvp8vc6qp" path="res://Audio/Indian.mp3" id="4_u0awa"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_wwu1v")
@@ -18,9 +20,11 @@ stream = ExtResource("2_x4axi")
 bus = &"Music"
 
 [node name="TensionMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("3_pckkr")
 bus = &"Music"
 
-[node name="MiniGameMusic1" type="AudioStreamPlayer" parent="Music"]
+[node name="MiniGameMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("4_u0awa")
 bus = &"Music"
 
 [node name="GlobalSFX" type="Node" parent="."]

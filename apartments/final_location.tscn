@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://gfp3j7vuq5ir"]
+
+[ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_0xrr2"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://Apartments/floor.tscn" id="2_y3kv3"]
+
+[node name="House" type="Node2D"]
+
+[node name="FloorColor" type="ColorRect" parent="."]
+offset_left = -256.0
+offset_top = -42.0
+offset_right = 100.0
+offset_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0xrr2")
+
+[node name="Floor" parent="." instance=ExtResource("2_y3kv3")]
+position = Vector2(0, 37.5)
+scale = Vector2(4, 0.1)

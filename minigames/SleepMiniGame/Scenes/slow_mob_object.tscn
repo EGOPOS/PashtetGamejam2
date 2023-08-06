@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ojwd46o4sgx"]
+
+[ext_resource type="PackedScene" uid="uid://il3gwbdgwd7r" path="res://minigames/SleepMiniGame/Scenes/clickable_object.tscn" id="1_soiol"]
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/SlowMobObject.gd" id="2_7kfrx"]
+[ext_resource type="Texture2D" uid="uid://dbyyjuj0bwh68" path="res://graphics/SleepMiniGame/ClockIco.png" id="3_sxvk8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bi6mu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sxvk8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SlowMobObject" instance=ExtResource("1_soiol")]
+script = ExtResource("2_7kfrx")
+effect_duration = 5.0
+
+[node name="Sprite" parent="." index="1"]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_bi6mu")
