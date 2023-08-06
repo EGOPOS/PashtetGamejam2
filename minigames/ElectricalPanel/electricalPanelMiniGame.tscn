@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_v2rrl"]
 [ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_spgt3"]
-[ext_resource type="Script" path="res://minigames/electricalPanelMiniGame.gd" id="2_v14st"]
+[ext_resource type="Script" path="res://minigames/ElectricalPanel/electricalPanelMiniGame.gd" id="2_v14st"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="3_36efr"]
 
 [node name="electricalPanelMiniGame" instance=ExtResource("1_v2rrl")]
