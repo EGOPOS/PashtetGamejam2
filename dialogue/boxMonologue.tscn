@@ -1,12 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bppikoc8vwe8p"]
+[gd_scene load_steps=2 format=3 uid="uid://cl6tw5c38ij7t"]
 
 [ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_pl7ix"]
 
 [node name="CanvasLayer" instance=ExtResource("1_pl7ix")]
 dialogue_pages = Array[String](["Такие коробки я зибирал за Шестёрочкой.", "Отлично уничтожали неровности на спальном месте."])
-
-[node name="Control" parent="." index="0"]
-offset_left = 0.0
-offset_top = 408.0
-offset_right = 1152.0
-offset_bottom = 648.0

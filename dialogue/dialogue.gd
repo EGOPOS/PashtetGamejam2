@@ -5,6 +5,7 @@ class_name Dialogue
 @onready var label: RichTextLabel = get_node("Control/label")
 @onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
 
+@export var minigame_action: Global.MINIGAMES
 @export var text_speed: float = 0.02
 @export var dialogue_pages: Array[String]
 var current_page = 0
@@ -43,9 +44,13 @@ func set_current_page(value):
 		animation_player.play("hide")
 		await animation_player.animation_finished
 		dialogue_ended.emit()
+		play_minigame()
 		queue_free()
 		return
 	update_text()
+
+func play_minigame() -> void:
+	Global.transition_to(Global.TRANSITION_TYPES.MINI_GAME, minigame_action)
 
 func update_text():
 	label.text = dialogue_pages[current_page]
