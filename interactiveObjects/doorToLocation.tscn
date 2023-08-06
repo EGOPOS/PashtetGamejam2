@@ -1,15 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvjboxqve5mhw"]
+[gd_scene load_steps=5 format=3 uid="uid://bvjboxqve5mhw"]
 
 [ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_1e6jo"]
 [ext_resource type="Script" path="res://interactiveObjects/doorToLocation.gd" id="2_y7mr8"]
+[ext_resource type="Texture2D" uid="uid://cqemqcqwqdm3p" path="res://graphics/furnitureShIT.png" id="3_mlc4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rcyd"]
-size = Vector2(18, 39.25)
+size = Vector2(18, 40.625)
 
 [node name="doorToLocation" instance=ExtResource("1_1e6jo")]
 script = ExtResource("2_y7mr8")
 action = 0
 action_type = 0
+object_name = "Дверь"
+
+[node name="Label" parent="." index="0"]
+visible = false
+offset_left = -29.0
+offset_top = -29.0
+offset_right = 271.0
+offset_bottom = -9.0
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-1, -1.90735e-06)
+texture = ExtResource("3_mlc4c")
+hframes = 6
+frame = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 0.6875)
 shape = SubResource("RectangleShape2D_5rcyd")

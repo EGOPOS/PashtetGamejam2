@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7dw3wq1nouyg"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_e1w1l"]
+
+[node name="phoneMonologue" instance=ExtResource("1_e1w1l")]
+dialogue_pages = Array[String](["Смайл Фэйс. 🙂"])
+
+[node name="Control" parent="." index="0"]
+offset_left = 0.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 648.0

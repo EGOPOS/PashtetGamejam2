@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlpuk7v5vecdb"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_8fxdw"]
+
+[node name="kitchenMonologue" instance=ExtResource("1_8fxdw")]
+dialogue_pages = Array[String](["Вроде бы здесь \"Домашние\" готовят еду."])

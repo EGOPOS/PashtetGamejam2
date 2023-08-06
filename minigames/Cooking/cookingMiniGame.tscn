@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://caytrova6x1u1"]
+
+[ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_gosjj"]
+[ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="2_a4ksh"]
+[ext_resource type="Script" path="res://minigames/Cooking/cookingMiniGame.gd" id="2_s41vd"]
+[ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="3_jr8x0"]
+[ext_resource type="PackedScene" uid="uid://78fo4mrxnc1b" path="res://minigames/Cooking/platform.tscn" id="4_3e75d"]
+[ext_resource type="FontVariation" uid="uid://dn5no3mibueu" path="res://fonts/default_font.tres" id="5_qwrwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11b5o"]
+size = Vector2(20.9273, 20)
+
+[node name="minigame" instance=ExtResource("1_gosjj")]
+script = ExtResource("2_s41vd")
+
+[node name="Timer" type="Timer" parent="." index="0"]
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+texture_filter = 1
+offset_left = -1659.0
+offset_top = -315.0
+offset_right = -1291.0
+offset_bottom = -251.0
+scale = Vector2(15, 15)
+texture = ExtResource("2_a4ksh")
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+anchor_mode = 0
+
+[node name="platform" parent="." index="3" instance=ExtResource("4_3e75d")]
+position = Vector2(576, 588)
+scale = Vector2(2.5, 2.5)
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(575.5, 656)
+scale = Vector2(55, 2)
+shape = SubResource("RectangleShape2D_11b5o")
+
+[node name="Floor" parent="." index="5" instance=ExtResource("3_jr8x0")]
+position = Vector2(-65, 341)
+scale = Vector2(1, 5.24)
+
+[node name="Floor2" parent="." index="6" instance=ExtResource("3_jr8x0")]
+position = Vector2(1217, 341)
+scale = Vector2(1, 5.24)
+
+[node name="Label" type="Label" parent="." index="7"]
+offset_left = 478.0
+offset_top = 22.0
+offset_right = 696.0
+offset_bottom = 62.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_qwrwi")
+theme_override_font_sizes/font_size = 20
+text = "score:"
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

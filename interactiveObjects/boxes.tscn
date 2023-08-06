@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bel5yrvn1v0h7"]
+
+[ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_kqrn4"]
+[ext_resource type="Texture2D" uid="uid://cqemqcqwqdm3p" path="res://graphics/furnitureShIT.png" id="2_6wu53"]
+[ext_resource type="Script" path="res://interactiveObjects/boxes.gd" id="2_v3ua2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pihvn"]
+size = Vector2(5, 42.75)
+
+[node name="boxes" instance=ExtResource("1_kqrn4")]
+script = ExtResource("2_v3ua2")
+action = 2
+action_type = 3
+object_name = "Картонные коробки"
+
+[node name="Label" parent="." index="0"]
+visible = false
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_6wu53")
+hframes = 6
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(25.5, 21.375)
+shape = SubResource("RectangleShape2D_pihvn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+position = Vector2(-24, 21.25)
+shape = SubResource("RectangleShape2D_pihvn")

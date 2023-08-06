@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxn1xb4ojus6f"]
+
+[ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_ib42x"]
+[ext_resource type="Script" path="res://interactiveObjects/kitchen.gd" id="2_rb5pk"]
+[ext_resource type="Texture2D" uid="uid://cygy0iop1jm7r" path="res://graphics/kitchen.png" id="2_uhelu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebig2"]
+size = Vector2(36, 29)
+
+[node name="kitchen" instance=ExtResource("1_ib42x")]
+script = ExtResource("2_rb5pk")
+action = 4
+action_type = 3
+object_name = "Кухня"
+
+[node name="Label" parent="." index="0"]
+visible = false
+offset_top = -19.0
+offset_bottom = 1.0
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_uhelu")
+hframes = 1
+frame = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(8, 0.5)
+shape = SubResource("RectangleShape2D_ebig2")

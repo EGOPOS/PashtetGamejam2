@@ -4,9 +4,3 @@
 
 [node name="plantMonologue" instance=ExtResource("1_322pf")]
 dialogue_pages = Array[String](["Это растение сосем не похоже на те что я видел. Не вижу в них жизни"])
-
-[node name="Control" parent="." index="0"]
-offset_left = 0.0
-offset_top = 408.0
-offset_right = 1152.0
-offset_bottom = 648.0

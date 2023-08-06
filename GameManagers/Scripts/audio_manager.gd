@@ -19,6 +19,9 @@ enum AUDIO{
 	CHAR_DIALOG_SOUND
 }
 
+func _ready():
+	Audio.change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+
 func change_current_music(_new_music: AUDIO) -> void:
 	current_music.stop()
 	match _new_music:

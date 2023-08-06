@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct82h14cfc28l"]
+
+[ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_v2rrl"]
+[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_spgt3"]
+[ext_resource type="Script" path="res://minigames/electricalPanelMiniGame.gd" id="2_v14st"]
+[ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="3_36efr"]
+
+[node name="electricalPanelMiniGame" instance=ExtResource("1_v2rrl")]
+script = ExtResource("2_v14st")
+
+[node name="TextureButton" type="TextureButton" parent="." index="0"]
+offset_left = 51.0
+offset_top = 247.0
+offset_right = 179.0
+offset_bottom = 375.0
+toggle_mode = true
+texture_normal = ExtResource("2_spgt3")
+texture_pressed = ExtResource("3_36efr")
+
+[node name="TextureButton2" type="TextureButton" parent="." index="1"]
+offset_left = 276.0
+offset_top = 247.0
+offset_right = 404.0
+offset_bottom = 375.0
+toggle_mode = true
+texture_normal = ExtResource("2_spgt3")
+texture_pressed = ExtResource("3_36efr")
+
+[node name="TextureButton3" type="TextureButton" parent="." index="2"]
+offset_left = 515.0
+offset_top = 247.0
+offset_right = 643.0
+offset_bottom = 375.0
+toggle_mode = true
+texture_normal = ExtResource("2_spgt3")
+texture_pressed = ExtResource("3_36efr")
+
+[node name="TextureButton4" type="TextureButton" parent="." index="3"]
+offset_left = 750.0
+offset_top = 247.0
+offset_right = 878.0
+offset_bottom = 375.0
+toggle_mode = true
+texture_normal = ExtResource("2_spgt3")
+texture_pressed = ExtResource("3_36efr")
+
+[node name="TextureButton5" type="TextureButton" parent="." index="4"]
+offset_left = 971.0
+offset_top = 247.0
+offset_right = 1099.0
+offset_bottom = 375.0
+toggle_mode = true
+texture_normal = ExtResource("2_spgt3")
+texture_pressed = ExtResource("3_36efr")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="toggled" from="TextureButton2" to="." method="_on_texture_button_2_toggled"]
+[connection signal="toggled" from="TextureButton3" to="." method="_on_texture_button_3_toggled"]
+[connection signal="toggled" from="TextureButton4" to="." method="_on_texture_button_4_toggled"]
+[connection signal="toggled" from="TextureButton5" to="." method="_on_texture_button_5_toggled"]

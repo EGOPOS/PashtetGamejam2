@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://djme50a2ixg6v"]
+
+[ext_resource type="Script" path="res://minigames/Cooking/food/food.gd" id="1_akgxy"]
+[ext_resource type="Texture2D" uid="uid://cheoe35bhnbtm" path="res://graphics/Food.png" id="2_t8pb5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4qfp"]
+radius = 10.6875
+
+[node name="food" type="RigidBody2D"]
+gravity_scale = 0.5
+script = ExtResource("1_akgxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_b4qfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2.98023e-08, -1.19209e-07)
+scale = Vector2(3, 3)
+texture = ExtResource("2_t8pb5")
+hframes = 8
+vframes = 8

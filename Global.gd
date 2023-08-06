@@ -10,10 +10,14 @@ var locations_paths = {
 	LOCATIONS.ENTRANCE: load("res://entrance.tscn")
 }
 
-enum MONOLOGUES {PLANT}
+enum MONOLOGUES {PLANT, PHONE, BOXES, WARDROBE, KITCHEN}
 
 var monologue_paths = {
-	MONOLOGUES.PLANT: load("res://dialogue/plantMonologue.tscn")
+	MONOLOGUES.PLANT: load("res://dialogue/plantMonologue.tscn"),
+	MONOLOGUES.PHONE: load("res://dialogue/phoneMonologue.tscn"),
+	MONOLOGUES.BOXES: load("res://dialogue/boxMonologue.tscn"),
+	MONOLOGUES.WARDROBE: load("res://dialogue/wardrobeMonologue.tscn"),
+	MONOLOGUES.KITCHEN: load("res://dialogue/kitchenMonologue.tscn")
 }
 
 enum MINIGAMES {COOKING, POWER_ENABLING}

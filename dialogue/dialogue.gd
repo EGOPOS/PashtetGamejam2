@@ -5,7 +5,7 @@ class_name Dialogue
 @onready var label: RichTextLabel = get_node("Control/label")
 @onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
 
-@export var text_speed: float
+@export var text_speed: float = 0.02
 @export var dialogue_pages: Array[String]
 var current_page = 0
 

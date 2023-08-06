@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://tnxvob65p8oc"]
+
+[ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_ew785"]
+[ext_resource type="Texture2D" uid="uid://cyw7mio8uf2tk" path="res://graphics/shkaf.png" id="2_d14ui"]
+[ext_resource type="Script" path="res://interactiveObjects/wardrobe.gd" id="2_j87jw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqjeg"]
+size = Vector2(38, 47)
+
+[node name="wardrobe" instance=ExtResource("1_ew785")]
+script = ExtResource("2_j87jw")
+action = 3
+action_type = 3
+object_name = "Книжный шкаф"
+
+[node name="Label" parent="." index="0"]
+visible = false
+offset_top = -35.0
+offset_bottom = -15.0
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+texture = ExtResource("2_d14ui")
+hframes = 1
+frame = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lqjeg")
