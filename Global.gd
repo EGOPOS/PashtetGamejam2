@@ -18,8 +18,9 @@ var monologue_paths = {
 
 enum MINIGAMES {COOKING, POWER_ENABLING}
 
-var minigames = {
-	MINIGAMES.COOKING: load("")
+var minigames_paths = {
+	MINIGAMES.COOKING: load(""),
+	MINIGAMES.POWER_ENABLING: load("")
 }
 
 func transition_to(type: TRANSITION_TYPES, action: int):
@@ -31,7 +32,7 @@ func transition_to(type: TRANSITION_TYPES, action: int):
 			pass
 		
 		TRANSITION_TYPES.MINI_GAME:
-			get_tree().current_scene.add_child(minigames[action].instantiate())
+			MinigameManager.start_minigame(minigames_paths[action])
 			
 		TRANSITION_TYPES.MONOLOGUE:
 			get_tree().current_scene.add_child(monologue_paths[action].instantiate())

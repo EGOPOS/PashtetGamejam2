@@ -7,6 +7,7 @@ class_name AudioManager
 @onready var step_sound: AudioStreamPlayer2D = $GlobalSFX/StepSound
 @onready var select_sound: AudioStreamPlayer2D = $GlobalSFX/SelectSound
 @onready var char_sound: AudioStreamPlayer = $GlobalSFX/CharDialogSound
+@onready var explosions_sound: AudioStreamPlayer2D = $GlobalSFX/ExplosionSound
 
 var noise: FastNoiseLite = FastNoiseLite.new()
 
@@ -16,7 +17,8 @@ enum AUDIO{
 	TENSION_MUSIC,
 	STEP_SOUND,
 	SELECT_SOUND,
-	CHAR_DIALOG_SOUND
+	CHAR_DIALOG_SOUND,
+	EXPLOSIONS_SOUND
 }
 
 func change_current_music(_new_music: AUDIO) -> void:
