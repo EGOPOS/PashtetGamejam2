@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://barb3fj7dbavk"]
 
-[ext_resource type="PackedScene" uid="uid://gfp3j7vuq5ir" path="res://Apartments/home.tscn" id="1_8tveg"]
+[ext_resource type="PackedScene" path="res://Apartments/Home.tscn" id="1_8tveg"]
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_57als"]
 
 [node name="House" type="Node2D"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn3ocb5am37kc"]
+
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/SleepMob.gd" id="1_uj8qm"]
+[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_70knf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ttfw"]
+size = Vector2(102, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kcrd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_70knf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SleepMob" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_uj8qm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ttfw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7kcrd")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]

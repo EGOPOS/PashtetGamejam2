@@ -1,6 +1,8 @@
 extends CanvasLayer
 
-var minigame: CanvasLayer
+class_name MinigameSingleton
+
+var minigame: MiniGame
 
 func start_minigame(_new_minigame: CanvasLayer) -> void:
 	minigame = _new_minigame
