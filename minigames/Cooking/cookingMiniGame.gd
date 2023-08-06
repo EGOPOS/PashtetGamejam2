@@ -4,6 +4,8 @@ var score: int
 
 var food = load("res://minigames/Cooking/food/food.tscn")
 
+@onready var timer: Timer = get_node("Timer")
+
 func _ready():
 	Audio.change_current_music(Audio.AUDIO.MINIGAME_MUSIC)
 
@@ -28,3 +30,12 @@ func _on_area_2d_body_entered(body):
 
 func update_score_label():
 	$Label.text = "score: " + str(score)
+
+func _process(delta):
+	if Global.thunder_time:
+		if timer.time_left >= timer.wait_time/2:
+			
+			minigame_ended.emit()
+
+func _on_timer1_timeout():
+	pass # Replace with function body.

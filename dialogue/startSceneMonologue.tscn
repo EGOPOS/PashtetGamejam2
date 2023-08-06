@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7krhq1n8haqa"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_24xfx"]
+
+[node name="CanvasLayer" instance=ExtResource("1_24xfx")]
+dialogue_pages = Array[String](["Одни нехорошие люди дали мне шанс влиться в их общество и предоставили мне квартиру.", "Хе-хе, посмотрим, что меня ждет в этом \"поместье\". Хорошо хоть ноги вытерли перед тем, как меня сюда засадили. Чемоданы крутятся, делов-то! О'кей, буду стараться выполнять эти \"бытовые задачи\". На кой черт они мне вообще? Улица была моим домом, а теперь вот это... Как бы говорили, \"Из одной дыры в другую\", ну да, вот такой я - бомж с квартиркой супер-уровня!"])
+
+[node name="Control" parent="." index="0"]
+offset_left = 0.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 648.0

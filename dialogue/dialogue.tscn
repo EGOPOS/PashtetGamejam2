@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_0y2ky"]
 [ext_resource type="Texture2D" uid="uid://bxpx8nrbjuatg" path="res://dialogue/1670915464_grizly-club-p-bomzh-png-1.png" id="1_q5lkl"]
-[ext_resource type="Texture2D" uid="uid://x5gmsbq7penf" path="res://graphics/DialogWindow.png" id="2_n7s5c"]
+[ext_resource type="Texture2D" path="res://graphics/DialogWindow.png" id="2_n7s5c"]
 
 [sub_resource type="Animation" id="Animation_jewb6"]
 length = 0.001
@@ -122,7 +122,7 @@ offset_bottom = 239.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
-text = "Continue"
+text = "Продолжить"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

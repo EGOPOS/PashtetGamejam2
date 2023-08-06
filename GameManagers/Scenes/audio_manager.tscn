@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cvo5aijrgsgic" path="res://Audio/MainSound.wav" id="2_x4axi"]
 [ext_resource type="AudioStream" uid="uid://dhlw1tn4parh4" path="res://Audio/Tension.mp3" id="3_pckkr"]
 [ext_resource type="AudioStream" uid="uid://dwxxs7lnwtm0u" path="res://Audio/SelectSoundEffect.mp3" id="3_qvhyf"]
-[ext_resource type="AudioStream" uid="uid://yds2jme1w3tm" path="res://Audio/ExplosionSound.wav" id="4_bydh8"]
+[ext_resource type="AudioStream" path="res://Audio/ExplosionSound.wav" id="4_bydh8"]
 [ext_resource type="AudioStream" uid="uid://c7ukcvp8vc6qp" path="res://Audio/Indian.mp3" id="4_u0awa"]
 
 [node name="AudioManager" type="Node"]
@@ -46,3 +46,6 @@ bus = &"SFX"
 [node name="CharDialogSound" type="AudioStreamPlayer" parent="GlobalSFX"]
 stream = ExtResource("3_qvhyf")
 bus = &"SFX"
+
+[connection signal="finished" from="Music/MainMusic" to="." method="_on_main_music_finished"]
+[connection signal="finished" from="Music/MiniGameMusic" to="." method="_on_mini_game_music_finished"]

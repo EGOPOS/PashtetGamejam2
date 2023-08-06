@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://78fo4mrxnc1b"]
 
 [ext_resource type="Script" path="res://minigames/Cooking/platform.gd" id="1_ex3sn"]
-[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="1_lbpk5"]
+[ext_resource type="Texture2D" uid="uid://oifwo5cvqlfy" path="res://graphics/platform.png" id="2_s7ewa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipbru"]
 size = Vector2(20, 13)
@@ -14,9 +14,10 @@ script = ExtResource("1_ex3sn")
 speed = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, 3.5)
-scale = Vector2(0.47625, 0.101563)
-texture = ExtResource("1_lbpk5")
+texture_filter = 1
+position = Vector2(-1.90735e-06, -2.5)
+scale = Vector2(4, 4)
+texture = ExtResource("2_s7ewa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)

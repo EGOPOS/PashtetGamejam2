@@ -13,7 +13,7 @@ size = Vector2(20.9273, 20)
 [node name="minigame" instance=ExtResource("1_gosjj")]
 script = ExtResource("2_s41vd")
 
-[node name="Timer" type="Timer" parent="." index="0"]
+[node name="Timer1" type="Timer" parent="." index="0"]
 autostart = true
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
@@ -60,5 +60,8 @@ text = "score:"
 horizontal_alignment = 1
 uppercase = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="." index="8"]
+
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer1_timeout"]

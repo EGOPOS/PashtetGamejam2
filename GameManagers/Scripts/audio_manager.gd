@@ -44,3 +44,9 @@ func play_char_audio(characters: int):
 	new_pitch = clamp(new_pitch, 0.9, 1.2)
 	char_sound.set_pitch_scale(new_pitch)
 	char_sound.play()
+
+func _on_main_music_finished():
+		change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+
+func _on_mini_game_music_finished():
+	change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)

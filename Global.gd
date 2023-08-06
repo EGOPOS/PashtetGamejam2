@@ -27,6 +27,8 @@ var minigames_paths = {
 	MINIGAMES.POWER_ENABLING: load("")
 }
 
+var thunder_time = false
+
 func transition_to(type: TRANSITION_TYPES, action: int):
 	match type:
 		TRANSITION_TYPES.LOCATION:
@@ -39,4 +41,11 @@ func transition_to(type: TRANSITION_TYPES, action: int):
 			MinigameManager.start_minigame(minigames_paths[action])
 			
 		TRANSITION_TYPES.MONOLOGUE:
+			for c in get_tree().current_scene.get_children():
+				if c is Dialogue:
+					if c.animation_player.current_animation != "hide":
+						c.animation_player.play("hide")
 			get_tree().current_scene.add_child(monologue_paths[action].instantiate())
+
+func thunder_event():
+	pass
