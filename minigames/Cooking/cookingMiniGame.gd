@@ -4,6 +4,9 @@ var score: int
 
 var food = load("res://minigames/Cooking/food/food.tscn")
 
+func _ready():
+	Audio.change_current_music(Audio.AUDIO.MINIGAME_MUSIC)
+
 func _on_timer_timeout():
 	var new_food = food.instantiate()
 	add_child(new_food)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn3ocb5am37kc"]
+[gd_scene load_steps=17 format=3 uid="uid://cn3ocb5am37kc"]
 
 [ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/SleepMob.gd" id="1_uj8qm"]
 [ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_70knf"]
+[ext_resource type="Texture2D" uid="uid://v3dhew5424yl" path="res://graphics/SleepMiniGame/Explosion.png" id="3_grhqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ttfw"]
 size = Vector2(102, 116)
@@ -17,6 +18,84 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fxmm"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j38vp"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjipl"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3tn2"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mibyc"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t8o4"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i82op"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixgso"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqse3"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igxua"]
+atlas = ExtResource("3_grhqf")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pyflr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fxmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j38vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3tn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mibyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t8o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i82op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixgso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqse3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igxua")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="SleepMob" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_uj8qm")
@@ -30,3 +109,9 @@ sprite_frames = SubResource("SpriteFrames_7kcrd")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pyflr")
+frame = 9
+frame_progress = 1.0
+speed_scale = 10.0

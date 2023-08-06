@@ -2,12 +2,15 @@ extends CharacterBody2D
 
 class_name SleepMob
 
+signal hit
+
 var health_points: int = 100
 var speed: float = 200
 
 @onready var homeless: Area2D = get_parent().get_node("Homeless")
 @onready var agent: NavigationAgent2D = get_node("NavigationAgent2D")
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var reward_score: int = 25
 
 #func _ready() -> void:
 #	pass
@@ -38,13 +41,24 @@ func make_velocity(_pos: Vector2) -> void:
 
 func _take_damage(_damage: int) -> void:
 	health_points -= _damage
-	change_animation()
+	play_take_damage_anim()
+	emit_signal("hit", self)
 	if health_points <= 0:
 		Audio.explosions_sound.play()
-#		Audio.explosion.play()
-		queue_free()
+		play_death_animation_and_kill()
 
-func change_animation() -> void:
+func kill() -> void:
+	get_parent().update_score_label(reward_score)
+	queue_free()
+
+func play_death_animation_and_kill() -> void:
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(2, 0.1), 0.1)
+	$Explosion.show()
+	$Explosion.play()
+	tween.finished.connect(kill)
+
+func play_take_damage_anim() -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(1, 0.7), 0.1)
 	tween.tween_property($AnimatedSprite2D, "scale", Vector2(1, 1), 0.1)

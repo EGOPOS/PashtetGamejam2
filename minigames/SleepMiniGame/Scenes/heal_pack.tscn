@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk8plnok35xqd"]
+
+[ext_resource type="PackedScene" uid="uid://il3gwbdgwd7r" path="res://minigames/SleepMiniGame/Scenes/clickable_object.tscn" id="1_epn51"]
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/HealPack.gd" id="2_hgwer"]
+[ext_resource type="Texture2D" uid="uid://c7b7ceefwq2i2" path="res://graphics/SleepMiniGame/heart.png" id="3_0xh0x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avdsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0xh0x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HealPack" instance=ExtResource("1_epn51")]
+script = ExtResource("2_hgwer")
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(0.0240433, 0.0240385)
+sprite_frames = SubResource("SpriteFrames_avdsn")

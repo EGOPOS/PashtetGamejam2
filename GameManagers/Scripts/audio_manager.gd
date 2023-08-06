@@ -15,6 +15,7 @@ enum AUDIO{
 	MAIN_MENU_MUSIC,
 	MAIN_SCENE_MUSIC,
 	TENSION_MUSIC,
+	MINIGAME_MUSIC,
 	STEP_SOUND,
 	SELECT_SOUND,
 	CHAR_DIALOG_SOUND,
@@ -33,6 +34,9 @@ func change_current_music(_new_music: AUDIO) -> void:
 			current_music = $Music/MainMusic
 		AUDIO.TENSION_MUSIC:
 			current_music = $Music/TensionMusic
+		AUDIO.MINIGAME_MUSIC:
+			current_music = $Music/MiniGameMusic
+		
 	current_music.play()
 
 func play_char_audio(characters: int):

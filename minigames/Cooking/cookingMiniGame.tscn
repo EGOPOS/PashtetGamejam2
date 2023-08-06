@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://minigames/Cooking/cookingMiniGame.gd" id="2_s41vd"]
 [ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="3_jr8x0"]
 [ext_resource type="PackedScene" uid="uid://78fo4mrxnc1b" path="res://minigames/Cooking/platform.tscn" id="4_3e75d"]
-[ext_resource type="FontVariation" uid="uid://dn5no3mibueu" path="res://fonts/default_font.tres" id="5_qwrwi"]
+[ext_resource type="FontVariation" path="res://fonts/default_font.tres" id="5_qwrwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11b5o"]
 size = Vector2(20.9273, 20)

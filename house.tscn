@@ -1,16 +1,16 @@
 [gd_scene load_steps=13 format=3 uid="uid://1mdxm5tvssqc"]
 
 [ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_aveac"]
-[ext_resource type="Texture2D" uid="uid://67k3rnnpnxaw" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
+[ext_resource type="Texture2D" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_vx6u4"]
-[ext_resource type="PackedScene" uid="uid://chna47xx02beu" path="res://interactiveObjects/homePhone.tscn" id="3_o2o7y"]
+[ext_resource type="PackedScene" path="res://interactiveObjects/homePhone.tscn" id="3_o2o7y"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="6_ce5al"]
 [ext_resource type="PackedScene" uid="uid://bvjboxqve5mhw" path="res://interactiveObjects/doorToLocation.tscn" id="6_oqv5t"]
 [ext_resource type="PackedScene" uid="uid://o1rxb22yord2" path="res://interactiveObjects/plant.tscn" id="7_nq0ks"]
 [ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="8_36ad4"]
-[ext_resource type="PackedScene" uid="uid://bel5yrvn1v0h7" path="res://interactiveObjects/boxes.tscn" id="9_ji8m2"]
-[ext_resource type="PackedScene" uid="uid://tnxvob65p8oc" path="res://interactiveObjects/wardrobe.tscn" id="10_ai1lj"]
-[ext_resource type="PackedScene" uid="uid://cxn1xb4ojus6f" path="res://interactiveObjects/kitchen.tscn" id="11_c51kv"]
+[ext_resource type="PackedScene" path="res://interactiveObjects/boxes.tscn" id="9_ji8m2"]
+[ext_resource type="PackedScene" path="res://interactiveObjects/wardrobe.tscn" id="10_ai1lj"]
+[ext_resource type="PackedScene" path="res://interactiveObjects/kitchen.tscn" id="11_c51kv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3u5bj"]
 closed = false
@@ -59,7 +59,6 @@ position = Vector2(85, -64)
 position = Vector2(106, -34)
 action = 2
 action_type = 1
-object_name = "Дверь в подъезд"
 
 [node name="homePhone" parent="InteractiveObjects" instance=ExtResource("3_o2o7y")]
 position = Vector2(90, -38)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfljyu3ha0ovk"]
+
+[ext_resource type="PackedScene" uid="uid://il3gwbdgwd7r" path="res://minigames/SleepMiniGame/Scenes/clickable_object.tscn" id="1_t61x1"]
+[ext_resource type="Script" path="res://minigames/SleepMiniGame/Scripts/super_bomb.gd" id="2_4s0vh"]
+[ext_resource type="Texture2D" uid="uid://rmppdkdyli8h" path="res://graphics/SleepMiniGame/nuclearMush.png" id="3_iyiwc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kum4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iyiwc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SuperBomb" instance=ExtResource("1_t61x1")]
+script = ExtResource("2_4s0vh")
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(0.165217, 0.141379)
+sprite_frames = SubResource("SpriteFrames_kum4u")

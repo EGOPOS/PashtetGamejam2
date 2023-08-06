@@ -10,6 +10,7 @@ func _ready():
 		var rb = buttons.pick_random()
 		if !true_queue.has(rb):
 			true_queue.append(rb)
+	Audio.change_current_music(Audio.AUDIO.MINIGAME_MUSIC)
 
 func _on_texture_button_toggled(button_pressed):
 	current_queue.append(buttons[0])
