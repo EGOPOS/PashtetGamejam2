@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://hjjd24g01wii"]
+[gd_scene load_steps=5 format=3 uid="uid://q3e00xfsrqtv"]
 
 [ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_nd33j"]
 [ext_resource type="Texture2D" uid="uid://2qwmt4254ock" path="res://graphics/bad.png" id="2_a6f71"]
@@ -14,6 +14,7 @@ action_type = 3
 object_name = "Кровать"
 
 [node name="Label" parent="." index="0"]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="." index="1"]

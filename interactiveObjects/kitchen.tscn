@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxn1xb4ojus6f"]
+[gd_scene load_steps=5 format=3 uid="uid://wdoqbt83vhjx"]
 
 [ext_resource type="PackedScene" uid="uid://dsk3tyfns5rci" path="res://interactiveObjects/interactiveObject.tscn" id="1_ib42x"]
 [ext_resource type="Script" path="res://interactiveObjects/kitchen.gd" id="2_rb5pk"]

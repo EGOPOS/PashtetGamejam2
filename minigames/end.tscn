@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://rv1q2db5llte"]
+
+[ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_5s6ll"]
+[ext_resource type="Texture2D" uid="uid://77mst68jqy2l" path="res://graphics/thx_screen.png" id="2_bcrwu"]
+[ext_resource type="Script" path="res://minigames/end.gd" id="2_n8jfc"]
+
+[node name="end" instance=ExtResource("1_5s6ll")]
+script = ExtResource("2_n8jfc")
+
+[node name="ThxScreen" type="Sprite2D" parent="." index="0"]
+texture_filter = 1
+position = Vector2(577, 301)
+scale = Vector2(8, 8)
+texture = ExtResource("2_bcrwu")
+
+[node name="Label" type="Label" parent="." index="1"]
+texture_filter = 1
+offset_left = 22.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 29.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Esc для выхода"

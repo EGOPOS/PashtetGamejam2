@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_0y2ky"]
 [ext_resource type="Texture2D" uid="uid://bxpx8nrbjuatg" path="res://dialogue/1670915464_grizly-club-p-bomzh-png-1.png" id="1_q5lkl"]
-[ext_resource type="Texture2D" path="res://graphics/DialogWindow.png" id="2_n7s5c"]
+[ext_resource type="Texture2D" uid="uid://x5gmsbq7penf" path="res://graphics/DialogWindow.png" id="2_n7s5c"]
 
 [sub_resource type="Animation" id="Animation_jewb6"]
 length = 0.001
@@ -58,6 +58,7 @@ _data = {
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_0y2ky")
+minigame_action = 4
 dialogue_pages = Array[String](["Фильм: \"Сatisfactory Fever\"В жанре: комедияГлавные герои:1. EGOPOS - опытный геймер, известный своим непоколебимым эго и любовью к сложным играм. Он всегда стремится быть лучшим и решает принять вызов в новой игре Satisfactory.2. ZΞPHΨR - энтузиаст игровой индустрии и хитрец. Этот молодой человек обожает исследовать и использовать баги в играх. В Satisfactory он видит потенциал для творчества и бесконечных приключений.3. Sol - энергичная и веселая девушка, не имеющая опыта в играх, но с огромным желанием поиграть в Satisfactory с друзьями. Она добрая и всегда готова помочь, хотя и попадает в самые смешные ситуации.", "Сюжет:EGOPOS рассказывает ZΞPHΨR и Sol о новом фантастическом мире, созданном в Satisfactory. Они собираются вместе, чтобы затестить игровое приключение и испытать все его возможности. Однако, уже с самого начала, они сталкиваются с багами и неожиданными ситуациями.Ключевая фраза фильма, \"Собрались как-то поиграть в Satisfactory\", становится поводом для появления комических эпизодов, в которых герои наталкиваются на магически превращающиеся фабрики, непредсказуемых монстров и другие смешные приключения. Они понимают, что Satisfactory - это не просто игра, а мир, где все возможно.", "EGOPOS, ошеломленный ситуацией, пытается доказать свою превосходность, но каждый раз упускает победу из-за его собственной высокомерности. ZΞPHΨR продолжает эксплуатировать баги, превращая игру в настоящий карнавал. Sol, смех и радость компании, оказывается самой удачливой и способной помочь команде выбраться из смешных ситуаций.В конце фильма, герои осознают, что Satisfactory - это важнее, чем победа, это общее приключение и веселье. Они наконец находят способ преодолевать баги и использовать их в свою пользу. Их дружба становится несокрушимой, а их приключения - воспоминанием, которое они будут делиться и смеяться всегда.", "Комедия \"Сatisfactory Fever\" предлагает зрителям непрерывный поток смешных ситуаций, захватывающие приключения и отличное настроение. В ней смешивается страсть к играм, живой юмор и незабываемые моменты, которые оставляют героям и зрителям ощущение, что они тоже были частью этого удивительного приключения."])
 
 [node name="Control" type="Control" parent="."]
@@ -69,9 +70,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -240.0
-offset_right = 576.0
+offset_top = 408.0
+offset_right = 1152.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -116,12 +117,12 @@ texture_filter = 1
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 0
 offset_left = 1009.0
-offset_top = 199.0
+offset_top = 197.0
 offset_right = 1150.0
-offset_bottom = 239.0
+offset_bottom = 237.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Продолжить"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://jl6smc7sl1tx"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_pa2ry"]
+
+[node name="CanvasLayer" instance=ExtResource("1_pa2ry")]
+minigame_action = 0
+dialogue_pages = Array[String](["Вроде бы здесь \"Домашние\" готовят еду.", "Я давно ничего не ел.", "Может попробовать что-то поглотить?", "Блин, тут совсем нет объетков.", "Придётся готовить из этой ... биомассы ..."])

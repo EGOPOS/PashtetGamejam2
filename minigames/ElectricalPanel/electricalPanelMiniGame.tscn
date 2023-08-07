@@ -1,60 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct82h14cfc28l"]
+[gd_scene load_steps=7 format=3 uid="uid://ct82h14cfc28l"]
 
 [ext_resource type="PackedScene" uid="uid://n7fng75ly2c0" path="res://minigames/miniGame.tscn" id="1_v2rrl"]
-[ext_resource type="Texture2D" uid="uid://b4bj6au3wd026" path="res://icon.svg" id="2_spgt3"]
 [ext_resource type="Script" path="res://minigames/ElectricalPanel/electricalPanelMiniGame.gd" id="2_v14st"]
-[ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="3_36efr"]
+[ext_resource type="Texture2D" uid="uid://dgjo6kc1ly3n6" path="res://graphics/Electrobox.png" id="4_gf5mc"]
+[ext_resource type="Texture2D" uid="uid://c1lhsys0fl5ae" path="res://graphics/Enterance.png" id="5_ape4j"]
+[ext_resource type="Texture2D" uid="uid://bm5ata0bjj236" path="res://graphics/btn_off.png" id="5_xf45l"]
+[ext_resource type="Texture2D" uid="uid://cr8nl8g6plf4u" path="res://graphics/Btn_on.png" id="6_o8x8e"]
 
 [node name="electricalPanelMiniGame" instance=ExtResource("1_v2rrl")]
 script = ExtResource("2_v14st")
 
-[node name="TextureButton" type="TextureButton" parent="." index="0"]
-offset_left = 51.0
-offset_top = 247.0
-offset_right = 179.0
-offset_bottom = 375.0
-toggle_mode = true
-texture_normal = ExtResource("2_spgt3")
-texture_pressed = ExtResource("3_36efr")
+[node name="Enterance" type="Sprite2D" parent="." index="0"]
+texture_filter = 1
+position = Vector2(-1576, 339)
+scale = Vector2(30, 30)
+texture = ExtResource("5_ape4j")
 
-[node name="TextureButton2" type="TextureButton" parent="." index="1"]
-offset_left = 276.0
-offset_top = 247.0
-offset_right = 404.0
-offset_bottom = 375.0
-toggle_mode = true
-texture_normal = ExtResource("2_spgt3")
-texture_pressed = ExtResource("3_36efr")
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(584, 309)
+scale = Vector2(30, 30)
+texture = ExtResource("4_gf5mc")
+hframes = 2
+frame = 1
 
-[node name="TextureButton3" type="TextureButton" parent="." index="2"]
-offset_left = 515.0
-offset_top = 247.0
-offset_right = 643.0
-offset_bottom = 375.0
+[node name="TextureButton" type="TextureButton" parent="." index="2"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+offset_left = 193.0
+offset_top = -51.0
+offset_right = 209.0
+offset_bottom = -35.0
+scale = Vector2(30, 30)
 toggle_mode = true
-texture_normal = ExtResource("2_spgt3")
-texture_pressed = ExtResource("3_36efr")
+texture_normal = ExtResource("5_xf45l")
+texture_pressed = ExtResource("6_o8x8e")
 
-[node name="TextureButton4" type="TextureButton" parent="." index="3"]
-offset_left = 750.0
-offset_top = 247.0
-offset_right = 878.0
-offset_bottom = 375.0
+[node name="TextureButton2" type="TextureButton" parent="." index="3"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+offset_left = 314.0
+offset_top = -51.0
+offset_right = 330.0
+offset_bottom = -35.0
+scale = Vector2(30, 30)
 toggle_mode = true
-texture_normal = ExtResource("2_spgt3")
-texture_pressed = ExtResource("3_36efr")
+texture_normal = ExtResource("5_xf45l")
+texture_pressed = ExtResource("6_o8x8e")
 
-[node name="TextureButton5" type="TextureButton" parent="." index="4"]
-offset_left = 971.0
-offset_top = 247.0
-offset_right = 1099.0
-offset_bottom = 375.0
+[node name="TextureButton3" type="TextureButton" parent="." index="4"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+offset_left = 434.0
+offset_top = -51.0
+offset_right = 450.0
+offset_bottom = -35.0
+scale = Vector2(30, 30)
 toggle_mode = true
-texture_normal = ExtResource("2_spgt3")
-texture_pressed = ExtResource("3_36efr")
+texture_normal = ExtResource("5_xf45l")
+texture_pressed = ExtResource("6_o8x8e")
+
+[node name="TextureButton4" type="TextureButton" parent="." index="5"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+offset_left = 554.0
+offset_top = -51.0
+offset_right = 570.0
+offset_bottom = -35.0
+scale = Vector2(30, 30)
+toggle_mode = true
+texture_normal = ExtResource("5_xf45l")
+texture_pressed = ExtResource("6_o8x8e")
 
 [connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
 [connection signal="toggled" from="TextureButton2" to="." method="_on_texture_button_2_toggled"]
 [connection signal="toggled" from="TextureButton3" to="." method="_on_texture_button_3_toggled"]
 [connection signal="toggled" from="TextureButton4" to="." method="_on_texture_button_4_toggled"]
-[connection signal="toggled" from="TextureButton5" to="." method="_on_texture_button_5_toggled"]

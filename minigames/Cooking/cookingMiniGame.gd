@@ -6,8 +6,12 @@ var food = load("res://minigames/Cooking/food/food.tscn")
 
 @onready var timer: Timer = get_node("Timer")
 
+@export var action: Global.LOCATIONS
+@export var action_type: Global.TRANSITION_TYPES
+
 func _ready():
 	Audio.change_current_music(Audio.AUDIO.MINIGAME_MUSIC)
+	minigame_ended.connect(exit_minigame)
 
 func _on_timer_timeout():
 	var new_food = food.instantiate()
@@ -29,13 +33,22 @@ func _on_area_2d_body_entered(body):
 		body.queue_free()
 
 func update_score_label():
-	$Label.text = "score: " + str(score)
+	$Label.text = "счёт: " + str(score)
 
-func _process(delta):
-	if Global.thunder_time:
-		if timer.time_left >= timer.wait_time/2:
-			
-			minigame_ended.emit()
+#func _process(delta):
+#	if Global.thunder_time:
+#		if timer.time_left >= timer.wait_time/2:
+#			minigame_ended.emit()
 
 func _on_timer1_timeout():
-	pass # Replace with function body.
+#	if !Global.thunder_time:
+	Global.bad_time = true
+	minigame_ended.emit()
+
+func exit_minigame() -> void:
+	Global.transition_to(action_type, action, Vector2(-38, -10))
+	Audio.change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+	if score > 0:
+		Global.call_deferred("transition_to", Global.TRANSITION_TYPES.MONOLOGUE, Global.MONOLOGUES.COOKING_GOOD)
+	else:
+		Global.call_deferred("transition_to", Global.TRANSITION_TYPES.MONOLOGUE, Global.MONOLOGUES.COOKING_BAD)

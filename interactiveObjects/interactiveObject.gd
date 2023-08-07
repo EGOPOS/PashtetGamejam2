@@ -10,14 +10,19 @@ var animation: bool = false
 
 func _ready():
 	label.text = object_name
+	sprite.material = load("res://interactiveObjects/outlineMaterial.tres")
+	visible = false
 
 func set_animation(value: bool):
+	visible = value
 	label.visible = value
-	animation = value
-	if animation:
-		sprite.material = load("res://interactiveObjects/outlineMaterial.tres")
-	else:
-		sprite.material = null
+#func set_animation(value: bool):
+#	label.visible = value
+#	animation = value
+#	if animation:
+#		sprite.material = load("res://interactiveObjects/outlineMaterial.tres")
+#	else:
+#		sprite.material = null
 
 func interact():
 	pass

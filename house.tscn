@@ -2,72 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://cosv04s23jge0" path="res://graphics/home_slit.png" id="1_aveac"]
 [ext_resource type="Script" path="res://house.gd" id="1_i67j6"]
-[ext_resource type="Texture2D" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
+[ext_resource type="Texture2D" uid="uid://67k3rnnpnxaw" path="res://graphics/paralaxBackground.png" id="1_y3yya"]
 [ext_resource type="PackedScene" uid="uid://jga8m1l174gi" path="res://homelander/homeless.tscn" id="2_vx6u4"]
-[ext_resource type="PackedScene" path="res://interactiveObjects/homePhone.tscn" id="3_o2o7y"]
+[ext_resource type="PackedScene" uid="uid://cn25fd3tabsun" path="res://interactiveObjects/homePhone.tscn" id="3_o2o7y"]
 [ext_resource type="Texture2D" uid="uid://dwul1r8oflfpf" path="res://graphics/smoothLight.tres" id="6_ce5al"]
 [ext_resource type="PackedScene" uid="uid://bvjboxqve5mhw" path="res://interactiveObjects/doorToLocation.tscn" id="6_oqv5t"]
 [ext_resource type="PackedScene" uid="uid://o1rxb22yord2" path="res://interactiveObjects/plant.tscn" id="7_nq0ks"]
 [ext_resource type="PackedScene" uid="uid://doc4xl1jgccot" path="res://apartments/floor.tscn" id="8_36ad4"]
-[ext_resource type="PackedScene" path="res://interactiveObjects/bad.tscn" id="9_284xf"]
+[ext_resource type="PackedScene" uid="uid://q3e00xfsrqtv" path="res://interactiveObjects/bad.tscn" id="9_284xf"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/boxes.tscn" id="9_ji8m2"]
 [ext_resource type="PackedScene" path="res://interactiveObjects/wardrobe.tscn" id="10_ai1lj"]
-[ext_resource type="PackedScene" path="res://interactiveObjects/kitchen.tscn" id="11_c51kv"]
+[ext_resource type="PackedScene" uid="uid://wdoqbt83vhjx" path="res://interactiveObjects/kitchen.tscn" id="11_c51kv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3u5bj"]
 closed = false
 polygon = PackedVector2Array(-254, -73, -160, -73, -160, -44, -158, -44, -158, -73, 32, -73, 32, -44, 34, -44, 34, -73, 100, -73, 100, -10, -254, -10)
-
-[sub_resource type="Animation" id="Animation_oempe"]
-resource_name = "thunder"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PointLight2D3:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PointLight2D2:enabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DirectionalLight2D:energy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.7]
-}
 
 [sub_resource type="Animation" id="Animation_8dwva"]
 length = 0.001
@@ -120,6 +69,57 @@ tracks/3/keys = {
 "values": [0.2]
 }
 
+[sub_resource type="Animation" id="Animation_oempe"]
+resource_name = "thunder"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D3:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D2:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_52djx"]
 _data = {
 "RESET": SubResource("Animation_8dwva"),
@@ -170,6 +170,7 @@ position = Vector2(85, -64)
 position = Vector2(106, -34)
 action = 2
 action_type = 1
+object_name = "Дверь в коридор"
 
 [node name="homePhone" parent="InteractiveObjects" instance=ExtResource("3_o2o7y")]
 position = Vector2(90, -38)

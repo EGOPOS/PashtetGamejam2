@@ -1,12 +1,12 @@
 extends MiniGame
 
-@onready var buttons = [$TextureButton, $TextureButton2, $TextureButton3, $TextureButton4, $TextureButton5]
+@onready var buttons = [$TextureButton, $TextureButton2, $TextureButton3, $TextureButton4]
 var true_queue = []
 var current_queue = []
 
 func _ready():
 	
-	while true_queue.size() != 5:
+	while true_queue.size() != 4:
 		var rb = buttons.pick_random()
 		if !true_queue.has(rb):
 			true_queue.append(rb)
@@ -29,11 +29,6 @@ func _on_texture_button_3_toggled(button_pressed):
 
 func _on_texture_button_4_toggled(button_pressed):
 	current_queue.append(buttons[3])
-	update_queue()
-
-
-func _on_texture_button_5_toggled(button_pressed):
-	current_queue.append(buttons[4])
 	update_queue()
 
 

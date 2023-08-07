@@ -16,6 +16,14 @@ var direction: Vector2 = Vector2(0, 1)
 
 var interactive_object: InteractiveObject = null
 
+func _ready():
+	if Global.escape_time:
+		$CanvasLayer/Label.text = "Задачи:\nВыбраться из квартиры."
+	elif Global.bad_time:
+		$CanvasLayer/Label.text = "Задачи:\nОтоспаться на кровати."
+	else:
+		$CanvasLayer/Label.text = "Задачи:\nПриготовить поесть на 'кухне'."
+
 func _physics_process(delta):
 	direction.x = Input.get_axis("left", "right")
 	

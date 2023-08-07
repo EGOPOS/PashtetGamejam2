@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpsvs1dhno8d6"]
+
+[ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_egoxd"]
+
+[node name="CanvasLayer" instance=ExtResource("1_egoxd")]
+dialogue_pages = Array[String](["Ммм, как хорошо!", "Грязые пальчики оближешь!", "Надо будет как-нибудь повторить на улице."])

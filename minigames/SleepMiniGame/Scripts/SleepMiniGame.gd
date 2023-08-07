@@ -75,8 +75,9 @@ func update_health_points(new_value: float) -> void:
 	$HPBar.value = new_value
 
 func exit_minigame() -> void:
+	Global.escape_time = true
 	Global.transition_to(action_type, action, Vector2(-157, -10))
-	Audio.change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+	Audio.change_current_music(Audio.AUDIO.TENSION_MUSIC)
 
 func take_damage(body) -> void:
 	if body is SleepMob:

@@ -4,5 +4,9 @@ extends InteractiveObject
 @export var action_type: Global.TRANSITION_TYPES
 
 func interact():
-	Global.transition_to(action_type, action)
+	if Global.bad_time:
+		Global.transition_to(action_type, Global.MONOLOGUES.BAD)
+	else:
+		Global.transition_to(action_type, Global.MONOLOGUES.BAD_N)
+	
 

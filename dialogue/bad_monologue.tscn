@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://fpow8ohmdrj4"]
+[gd_scene load_steps=3 format=3 uid="uid://dsklcbk3fhyrf"]
 
-[ext_resource type="PackedScene" uid="uid://cl6tw5c38ij7t" path="res://dialogue/boxMonologue.tscn" id="1_c8tsx"]
+[ext_resource type="PackedScene" uid="uid://cwr2paenc0dgh" path="res://dialogue/boxMonologue.tscn" id="1_c8tsx"]
 [ext_resource type="Script" path="res://dialogue/bad_monologue.gd" id="2_y0bb4"]
 
 [node name="CanvasLayer" instance=ExtResource("1_c8tsx")]

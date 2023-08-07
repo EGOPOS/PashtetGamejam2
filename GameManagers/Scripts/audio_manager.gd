@@ -22,9 +22,6 @@ enum AUDIO{
 	EXPLOSIONS_SOUND
 }
 
-func _ready():
-	Audio.change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
-
 func change_current_music(_new_music: AUDIO) -> void:
 	current_music.stop()
 	match _new_music:
@@ -46,7 +43,10 @@ func play_char_audio(characters: int):
 	char_sound.play()
 
 func _on_main_music_finished():
-		change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+	change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
 
 func _on_mini_game_music_finished():
 	change_current_music(Audio.AUDIO.MAIN_SCENE_MUSIC)
+
+func _on_tension_music_finished():
+	change_current_music(Audio.AUDIO.TENSION_MUSIC)

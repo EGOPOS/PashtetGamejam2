@@ -1,12 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceb6cybsx3mhb"]
+[gd_scene load_steps=2 format=3 uid="uid://japqco0eqnx7"]
 
 [ext_resource type="PackedScene" uid="uid://bqyuauynu4j5o" path="res://dialogue/dialogue.tscn" id="1_fwg57"]
 
 [node name="CanvasLayer" instance=ExtResource("1_fwg57")]
 dialogue_pages = Array[String](["Я так хорошо спал.", "Правда снились мне всякие ужасы..."])
-
-[node name="Control" parent="." index="0"]
-offset_left = -576.0
-offset_top = -240.0
-offset_right = 576.0
-offset_bottom = 0.0
